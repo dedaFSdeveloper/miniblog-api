@@ -22,6 +22,10 @@ app.get('/', (req, res) => {
 const errorHandler = require('./src/middlewares/error.middleware');
 app.use(errorHandler);
 
+app.get('/api-docs.json', (req, res) => {
+  res.json(swaggerSpec);
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en puerto ${PORT}`);
   console.log(`Docs en http://localhost:${PORT}/api-docs`);
