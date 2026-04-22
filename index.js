@@ -1,6 +1,6 @@
 const dotenv = require('dotenv');
 dotenv.config();
-
+const commentsRouter = require('./src/routes/comments.route');
 const express = require('express');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./src/swagger');
@@ -13,6 +13,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use('/authors', authorsRouter);
 app.use('/posts', postsRouter);
+app.use('/comments', commentsRouter);
 const PORT = process.env.PORT || 8080;
 
 app.get('/', (req, res) => {

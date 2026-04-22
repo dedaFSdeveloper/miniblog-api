@@ -8,11 +8,10 @@ title: 'MiniBlog API',
 version: '1.0.0',
 description: 'API REST para gestionar authors y posts',
     },
-    servers: [
-{
-        url: 'http://localhost:8080',
-},
-    ],
+servers: [
+  { url: 'http://localhost:8080' },
+  { url: 'https://miniblog-api-production.up.railway.app' }
+],
 },
 apis: ['./src/routes/*.js'],
 };

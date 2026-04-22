@@ -49,7 +49,7 @@ DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=miniblog
 DB_USER=postgres
-DB_PASSWORD=tu_password
+DB_PASSWORD=admin123
 
 ## Tests
 ```bash
@@ -59,4 +59,21 @@ npm test
 ## Documentación API
 Con el servidor corriendo, entrá a:
 http://localhost:8080/api-docs
+- Producción: https://miniblog-api-production.up.railway.app/api-docs
+- Archivo OpenAPI: `openapi.json`
 
+## Deploy en Railway
+1. Crear cuenta en railway.app
+2. New Project → Deploy from GitHub repo
+3. Seleccionar el repositorio
+4. Agregar servicio PostgreSQL
+5. Configurar variables de entorno en Settings → Variables:
+
+DB_HOST=postgres.railway.internal 
+DB_PORT=5432
+DB_NAME=railway
+DB_USER=postgres
+DB_PASSWORD=admin123
+PORT=8080
+
+6. URL pública: https://miniblog-api-production.up.railway.app
